@@ -100,3 +100,4 @@ extension AViewController: TrackingUp {
 
 ***
 Here is another good article regarding [ViewController Hierarchies](https://sandofsky.com/patterns/controller-hierarchies/)
+[source code](https://gist.github.com/simeonlu/2d544ee1999e310836c6c7b5041f7393.js)

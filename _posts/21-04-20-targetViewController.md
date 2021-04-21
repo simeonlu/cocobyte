@@ -2,7 +2,7 @@
 layout: post
 title: targetViewController
 ---
-## targetViewController
+## targetViewController(forAction:sender:)
 
 There is a senario where that we have view controller A, and A presents view controller B, then B presents C view controllers, and so on, this will form a view controller hierarchy. At a certain point, we may want to pass one piece of data from a far away child view controller, C for example, back to parent controller A. How do we do that?
 
@@ -18,7 +18,7 @@ Apple document describes this methos as:
 
 As it said this method basically just trace up the view controller hierarchy to find a proper receiver for the action. Let's see how to pass data back to parent by code.
 
-First we have a controller A and its child view controller B, C, in C there is an action that will trigger the data pass back process
+First we have a controller A and its child view controller B, C, in C there is an action that will trigger the data passing back:
 
 ```
 class AViewController: UIViewController, TrackingUp {
@@ -87,9 +87,13 @@ extension AViewController: TrackingUp {
 }
 ```
 ### summary
-Use this method we can avoid to pass around delegate object or introduce reactive library.
-It also stick to build in UIKit which all iOS developers are familiar with.
-Some drawbacks you may also notice here though: 
-
-- You have to expose the function to Objective-C and use Objective-C runtime
-- In `performSelector:(SEL)aSelector withObject:(id)object` function argument object lost the type information(e.g. an `id`), that is why the argument type defined in protocol `didSelected(index: NSNumber)` method is `NSNumber`.
+> Pro
+> 
+- Use this method we can avoid to pass around delegate objects or introducing other reactive libraries.
+- It also stick to build in UIKit which all iOS developers are familiar with.
+> Con
+> 
+- You have to expose functions to Objective-C and use Objective-C runtime.
+- In `performSelector:(SEL)aSelector withObject:(id)object` function argument object lost type information(e.g. an `id`), that is why the argument type defined in protocol `didSelected(index: NSNumber)` method is `NSNumber`.
+- The child view controllers have to know what kind of the `selector` need to be checked, leaking unneeded details.
+- If the final received view controller is container controller like `UINavigationViewController` or `TabViewController` then you may have to subclass your own container controller in order to override `targetViewController` function. 

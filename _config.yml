@@ -1,18 +1,38 @@
----
-title: Simeon's Blog
-baseurl: "/"
-desc: A minimal blog for iOS, Android coding issues.
-about: Father, Husband & Coder
-image: images/slyu.jpg
-excerpt_separator: "<!-- more -->"
-markdown: kramdown
-gems:
-- jekyll-paginate
-exclude:
-  - .jekyll-metadata
-  - README.md
-  - CNAME
-paginate: 10
-paginate_path: "/:num/"
+# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+
+paginate: 10 # pagination based on number of posts
+paginate_path: "page:num"
+exclude: ["README.md"] # files to exclude
 highlighter: rouge
-permalink: pretty
+markdown: kramdown
+disqus: dbyll
+google_analytics: dbyll
+title: Simeon's Blog
+
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: Coco Byte
+
+description: A minimal blog for iOS, Android coding issues.
+author:
+  name: Simeon
+  email: simeonlu@outlook.com
+  github: simeonlu
+  twitter: simeonlu
+  bio: Farter & Coder
+  email_md5: 9a8d013d00b1dad185571d2eb5a9dbe1
+
+rss_path: feed.xml
+categories_path: categories.html
+tags_path: tags.html
+
+# set it as url of an image
+#sidebar_background_image: https://www.dropbox.com/s/g9h23zrycedxtk5/sky.png?raw=1
+
+BASE_PATH:
+
+plugins:
+  - jekyll-paginate

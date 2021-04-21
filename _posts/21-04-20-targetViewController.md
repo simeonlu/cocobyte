@@ -90,9 +90,13 @@ extension AViewController: TrackingUp {
 > 
 - Use this method we can avoid to pass around delegate objects or introducing other reactive libraries.
 - It also stick to build in UIKit which all iOS developers are familiar with.
+
 > Con
 > 
 - You have to expose functions to Objective-C and use Objective-C runtime.
 - In `performSelector:(SEL)aSelector withObject:(id)object` function argument object lost type information(e.g. an `id`), that is why the argument type defined in protocol `didSelected(index: NSNumber)` method is `NSNumber`.
 - The child view controllers have to know what kind of the `selector` need to be checked, leaking unneeded details.
 - If the final received view controller is container controller like `UINavigationViewController` or `TabViewController` then you may have to subclass your own container controller in order to override `targetViewController` function. 
+
+***
+Here is another good article regarding [ViewController Hierarchies](https://sandofsky.com/patterns/controller-hierarchies/)

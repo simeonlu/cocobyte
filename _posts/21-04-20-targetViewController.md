@@ -2,7 +2,6 @@
 layout: post
 title: targetViewController
 ---
-## targetViewController(forAction:sender:)
 
 There is a senario where that we have view controller A, and A presents view controller B, then B presents C view controllers, and so on, this will form a view controller hierarchy. At a certain point, we may want to pass one piece of data from a far away child view controller, C for example, back to parent controller A. How do we do that?
 

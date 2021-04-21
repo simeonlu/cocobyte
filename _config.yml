@@ -3,7 +3,7 @@ title: Simeon's Blog
 baseurl: "/"
 desc: A minimal blog for off-topic blog entries.
 about: Father, Husband & Coder
-image: https://pinto-light.glitch.me/?width=500&height=500&url=https://i.imgur.com/mxUVc2x.jpg&extension=jpg
+image: /images/slyu.jpg
 excerpt_separator: "<!-- more -->"
 markdown: kramdown
 gems:

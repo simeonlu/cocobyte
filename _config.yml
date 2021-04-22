@@ -22,13 +22,17 @@ author:
   email: simeonlu@outlook.com
   github: simeonlu
   twitter: simeonlu
-  bio: Farter & Coder
+  bio: Father, Husband & Coder
   email_md5: 9a8d013d00b1dad185571d2eb5a9dbe1
 
 rss_path: feed.xml
 categories_path: categories.html
 tags_path: tags.html
-tags: iOS, Android, Kotlin, Others
+tags:
+  - iOS
+  - Android
+  - Kotlin
+  - Others
 
 # set it as url of an image
 #sidebar_background_image: https://www.dropbox.com/s/g9h23zrycedxtk5/sky.png?raw=1
